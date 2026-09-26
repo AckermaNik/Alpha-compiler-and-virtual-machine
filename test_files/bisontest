@@ -1,0 +1,135 @@
+x=[];
+
+(function(x,y){
+    y=[];
+    k=9;
+    print("Hello Nikol");
+    return 1;
+})();
+
+function createNode(value){
+    return [
+        {"val": value},
+        {"next": nil}
+    ];
+}
+
+function createList(){
+    return [
+        {"head":nil},
+        {"tail":nil},
+        {"len":0},
+        {"append":
+            (
+                function(self, element){
+                    node = createNode(element);
+                    if(self.head==nil){
+                        self.head = node;
+                        self.tail = self.head;
+                        self.len = self.len + 1;
+                        return;
+                    }
+                    self.tail.next = node;
+                    self.tail = node;
+                    self.len = self.len + 1;
+                }
+            )
+        },
+        {"prepend":
+            (
+                function(self, element){
+                    node = createNode(element);
+                    if(self.head==nil){
+                        self.tail = node;
+                    }
+                    node.next = self.head;
+                    self.head = node;
+                    self.len = self.len + 1;
+                }
+            )
+        },
+        {"length":
+            (
+                function(self){
+                    return self.len;
+                }
+            )
+        },
+        {"toString":
+            (
+                function(self){
+                    it = self.head;
+                    while(it!=nil){
+                        print(it.val);
+                        it = it.next;
+                    }
+                }
+            )
+        }
+    ];
+}
+
+list = createList();
+list..append(1);
+list..append(4);
+list..prepend(9);
+list..toString();
+
+if (x==false) {
+	a=[];
+	a=[{"a":1}, {"b":2},{"c":"3"}];
+	//x=1/0;
+	//a=[];
+	a.b=a.c;
+	//a..f();
+} else {
+    t=2;
+	while (t>=0) {
+		for (i=0; i<3; i++) {
+			print(typeof(2024));
+		}
+        t--;
+	
+	}
+}
+
+function fib(n){
+    if (n <= 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fib(n - 1) + fib(n - 2);
+    }
+}
+
+print(fib(12));
+
+// //insert in ST anonymous function with 
+// //two formal arguments (x, AnonymousOne). scope: 0, line: 5
+// //insert in ST formal argument x. scope: 1, line: 5
+// //insert in ST formal argument AnonymousOne. scope: 1, line: 5
+// function (x, AnonymousOne){
+	
+// 	//insert in ST anonymous function with 
+// 	//one formal argument (AnonymousTwo). scope: 1, line: 10
+// 	//insert in ST formal argument AnonymousTwo. scope: 2, line: 10
+// 	function (AnonymousTwo){
+		
+// 		//insert in ST anonymous function with 
+// 		//one formal argument (AnonymousThree). scope: 2, line: 15
+// 		//insert in ST formal argument AnonymousThree. scope: 3, line: 15
+// 		function (AnonymousThree){}
+		
+// 		//insert in ST anonymous function with 
+// 		//one formal argument (AnonymousFour). scope: 2, line: 20
+// 		//insert in ST formal argument AnonymousFour. scope: 3, line: 20
+// 		function (AnonymousFour){}
+// 	}
+// }
+
+// //insert in ST anonymous function with 
+// //two formal arguments (x, AnonymousFive). scope: 0, line: 28
+// //insert in ST formal argument x. scope: 1, line: 28
+// //insert in ST formal argument AnonymousFive. scope: 1, line: 28
+// function (x, AnonymousFive){}
