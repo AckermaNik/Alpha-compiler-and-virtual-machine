@@ -74,7 +74,6 @@
     #include <stdio.h>
     #include <stdlib.h>
 
-    extern int alpha_yylex(void* ylval);
     int yylex();
     int yyerror(char* yaccProvidedMessage){return 0;};
     void printHelp(char*);

@@ -7,8 +7,18 @@
     #include <stdio.h>
     #include <stdlib.h>
 
-    extern int alpha_yylex(void* ylval);
+    /*
+     * Forward declaration of the lexer function called by Bison. Flex
+     * generates yylex(), and the parser calls it whenever it needs the next
+     * token from the input stream.
+     */
     int yylex();
+
+    /*
+     * Bison calls yyerror() when it encounters a syntax error. This version
+     * deliberately returns 0 without printing the supplied message; the
+     * grammar's own error handling is responsible for the visible output.
+     */
     int yyerror(char* yaccProvidedMessage){return 0;};
     void printHelp(char*);
     extern int lineno;

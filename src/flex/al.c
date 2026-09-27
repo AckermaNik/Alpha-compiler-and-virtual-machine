@@ -612,10 +612,6 @@ char *yytext;
    #include "../../utils/alpha_utilities.h"
    
 
-    //#define YY_DECL int alpha_yylex(YYSTYPE yylval)
-    
-    int alpha_yylex(void* ylval);
-
    //Declarations
    void parseMultilineComment();
    void printMultilineComment(struct alpha_token_t*,int);
